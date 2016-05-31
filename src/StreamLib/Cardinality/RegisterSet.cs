@@ -10,13 +10,12 @@
         /// <summary>
         /// Readonly internal representation, do not modify it.
         /// </summary>
-        //public readonly uint[] M;
-        public TempSet M;
+        public readonly uint[] M;
 
-        public RegisterSet(uint count, TempSet initialValues = null)
+        public RegisterSet(uint count, uint[] initialValues = null)
         {
             Count = count;
-            M = initialValues ?? new TempSet((int)GetSizeForCount(count));
+            M = initialValues ?? new uint[GetSizeForCount(count)];
         }
 
         public override string ToString()

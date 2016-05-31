@@ -1,13 +1,11 @@
-﻿using StreamLib.Cardinality;
-
-namespace StreamLib.Utils
+﻿namespace StreamLib.Utils
 {
     public static class Bits
     {
-        public static TempSet GetBits(byte[] bytes)
+        public static uint[] GetBits(byte[] bytes)
         {
             var blocks = bytes.Length / 4;
-            var result = new TempSet (blocks);
+            var result = new uint[blocks];
 
             unsafe
             {
